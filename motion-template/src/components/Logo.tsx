@@ -6,7 +6,7 @@ export function Logo({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <a className="logo" href={company.homeHref} aria-label={`${company.name} home`} onClick={onNavigate}>
       {!company.logoMark ? null : company.logoTint ? (
-        <span className="logo__mark logo__mark--tint" style={{ "--logo-url": `url("${company.logoMark}")` } as CSSProperties} aria-hidden="true" />
+        <span className="logo__mark logo__mark--tint" style={{ "--logo-url": `url("${new URL(company.logoMark, document.baseURI).href}")` } as CSSProperties} aria-hidden="true" />
       ) : (
         <img className="logo__mark" src={company.logoMark} alt="" aria-hidden="true" />
       )}

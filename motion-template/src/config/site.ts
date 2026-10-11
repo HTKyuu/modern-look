@@ -15,9 +15,9 @@ export const site: SiteConfig = {
   company: {
     name: "Nexora",
     wordmark: "NEXORA",
-    logoMark: "/brand/logo-mark.svg",
+    logoMark: "brand/logo-mark.svg",
     logoTint: true,
-    homeHref: "/",
+    homeHref: "./",
   },
 
   meta: {
@@ -47,8 +47,8 @@ export const site: SiteConfig = {
     video: {
       label: "Watch video",
       title: "Nexora — brand film",
-      src: "/media/brand-film.mp4",
-      poster: "/media/brand-film-poster.webp",
+      src: "media/brand-film.mp4",
+      poster: "media/brand-film-poster.webp",
     },
     stats: [
       { value: "10K+", label: "Teams building" },
@@ -72,14 +72,14 @@ export const site: SiteConfig = {
     frame: { width: 1536, height: 754 },
     layers: {
       dark: {
-        back: "/artwork/dark/ribbon-back.webp",
-        main: "/artwork/dark/ribbon-main.webp",
-        front: "/artwork/dark/ribbon-front.webp",
+        back: "artwork/dark/ribbon-back.webp",
+        main: "artwork/dark/ribbon-main.webp",
+        front: "artwork/dark/ribbon-front.webp",
       },
       light: {
-        back: "/artwork/light/ribbon-back.webp",
-        main: "/artwork/light/ribbon-main.webp",
-        front: "/artwork/light/ribbon-front.webp",
+        back: "artwork/light/ribbon-back.webp",
+        main: "artwork/light/ribbon-main.webp",
+        front: "artwork/light/ribbon-front.webp",
       },
     },
     subjectStartX: 560,
