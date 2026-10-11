@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brand preview</title>
+  <meta name="description" content="The same components rendered for two different company identities from configuration alone.">
+  <script src="config/brands.js"></script>
+  <script src="config/site.config.js"></script>
+  <script src="js/head.js"></script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-site-header></div>
+  <noscript><nav class="container" aria-label="Main"><p><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="pricing.html">Pricing</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p></nav></noscript>
+
+  <main id="main">
+    <header class="container page-header" style="padding-bottom: 0">
+      <h1>One template, two companies</h1>
+      <p class="lede">Everything below is rendered by the same components. Only the entry in <code>config/brands.js</code> changes: logo, fonts, colours, shape, navigation, calls to action and the sample copy.</p>
+    </header>
+
+    <section class="container" aria-labelledby="preview-title">
+      <div class="brand-preview-toolbar">
+        <h2 id="preview-title" style="font-size: var(--text-xl)">Previewing <span data-brand-preview-name>…</span></h2>
+        <fieldset class="segmented" data-brand-switcher><legend>Brand</legend></fieldset>
+      </div>
+      <p class="text-sm text-muted" style="margin-bottom: var(--space-4)">The preview is a static rendering: its links and buttons are inactive. Use the header theme selector to see each brand in light and dark.</p>
+      <div id="brand-preview" class="brand-scope" inert aria-label="Brand preview"></div>
+
+      <div class="brand-diff">
+        <h2 style="font-size: var(--text-xl); margin-bottom: var(--space-4)">What this brand changes</h2>
+        <div class="table-wrap">
+          <table class="table">
+            <tbody data-brand-diff></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="howto-title">
+      <div class="container container-narrow prose">
+        <h2 id="howto-title">Adding a third company</h2>
+        <p>Copy one of the two objects in <code>config/brands.js</code>, give it a new key, and change its values. Then point <code>brand</code> in <code>config/site.config.js</code> at the new key. The whole site, including this page, picks it up.</p>
+        <p>Run <code>node scripts/check-contrast.mjs</code> after changing colours. It checks every text and control pair in both themes against WCAG 2.2 AA and fails if one is short.</p>
+        <p>The full list of inputs, files and rules is in <code>docs/SKILL-CONVERSION.md</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

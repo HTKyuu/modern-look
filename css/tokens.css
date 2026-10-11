@@ -1,0 +1,160 @@
+/*
+ * Design tokens.
+ *
+ * Three tiers:
+ *   1. Brand values   --brand-light-* / --brand-dark-*, fonts, radii.
+ *      Defaults below match the default brand so the CSS works without JS;
+ *      js/head.js overwrites them from config/brands.js.
+ *   2. Semantic tokens --color-*, --shadow-*, --space-*, --text-*, --duration-*.
+ *      Components use ONLY these.
+ *   3. Theme switching: `color-scheme` + light-dark(). "System" is the
+ *      default; [data-theme] pins a theme; .theme-light/.theme-dark pin a
+ *      subtree (used by the showcase to render both themes side by side).
+ *
+ * The semantic mapping is declared on :root AND .brand-scope so a brand can
+ * be re-applied to a subtree (the brand preview page) by overriding the
+ * brand tier on that element.
+ */
+@layer tokens, base, components, pages;
+
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+
+    /* ---- Tier 1: brand defaults (Hollis & Reed) ---- */
+    --brand-light-bg: #FCFAF6;
+    --brand-light-surface: #FFFFFF;
+    --brand-light-surface-sunken: #F3EFE7;
+    --brand-light-text: #1C2420;
+    --brand-light-text-muted: #5B655F;
+    --brand-light-border: #E2DDD3;
+    --brand-light-border-strong: #B9B2A4;
+    --brand-light-accent: #2E6B4B;
+    --brand-light-accent-hover: #255A3E;
+    --brand-light-accent-soft: #E3F0E7;
+    --brand-light-on-accent: #FFFFFF;
+    --brand-light-highlight: #F2C94C;
+
+    --brand-dark-bg: #141A16;
+    --brand-dark-surface: #1C231E;
+    --brand-dark-surface-sunken: #10150F;
+    --brand-dark-text: #ECEAE3;
+    --brand-dark-text-muted: #A3ABA4;
+    --brand-dark-border: #2F3933;
+    --brand-dark-border-strong: #4C5750;
+    --brand-dark-accent: #7FCF9F;
+    --brand-dark-accent-hover: #99DBB2;
+    --brand-dark-accent-soft: #1F3328;
+    --brand-dark-on-accent: #141A16;
+    --brand-dark-highlight: #F2C94C;
+
+    --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+    --font-body: "Source Sans 3", "Segoe UI", Roboto, system-ui, sans-serif;
+    --font-display-weight: 700;
+    --font-display-tracking: -0.015em;
+
+    --radius-sm: 8px;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --radius-button: 999px;
+
+    /* ---- Tier 2: brand-independent semantic tokens ---- */
+
+    /* Status colours: readable as text on bg and surface in both themes. */
+    --color-success: light-dark(#1E7A46, #5DD39E);
+    --color-success-soft: light-dark(#E1F3E8, #16301F);
+    --color-warning: light-dark(#8A5A00, #F5C044);
+    --color-warning-soft: light-dark(#FBF0D4, #332A10);
+    --color-danger: light-dark(#B42318, #F97066);
+    --color-danger-soft: light-dark(#FBE4E2, #3A1816);
+    --color-info: light-dark(#1F5FBF, #7FB2FF);
+    --color-info-soft: light-dark(#E2ECFB, #16243A);
+    --color-overlay: light-dark(rgb(28 36 32 / 0.45), rgb(0 0 0 / 0.65));
+
+    /* Elevation: light uses soft shadows, dark uses a faint edge plus depth.
+       light-dark() only takes colours, so the colours carry the theme. */
+    --shadow-color: light-dark(rgb(20 24 20 / 0.07), rgb(0 0 0 / 0.55));
+    --shadow-edge: light-dark(transparent, rgb(255 255 255 / 0.05));
+    --shadow-sm: 0 1px 2px var(--shadow-color);
+    --shadow-md: 0 0 0 1px var(--shadow-edge), 0 1px 2px var(--shadow-color), 0 6px 16px var(--shadow-color);
+    --shadow-lg: 0 0 0 1px var(--shadow-edge), 0 2px 4px var(--shadow-color), 0 20px 48px var(--shadow-color);
+    --color-on-danger: light-dark(#FFFFFF, #1A0C0B);
+
+    /* Spacing scale (rem). */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+    --section-padding: clamp(3.5rem, 8vw, 6.5rem);
+
+    /* Layout. */
+    --container: 72rem;
+    --container-narrow: 46rem;
+    --gutter: clamp(1rem, 4vw, 2rem);
+    --header-height: 4rem;
+    --z-header: 20;
+    --z-dialog: 50;
+    --z-toast: 60;
+
+    /* Type scale. */
+    --text-xs: 0.8125rem;
+    --text-sm: 0.9375rem;
+    --text-base: 1.0625rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
+    --text-3xl: clamp(2.375rem, 1.5rem + 3.5vw, 4rem);
+    --leading-tight: 1.08;
+    --leading-snug: 1.25;
+    --leading-normal: 1.55;
+    --leading-relaxed: 1.65;
+
+    /* Motion. */
+    --duration-fast: 120ms;
+    --duration: 200ms;
+    --duration-slow: 320ms;
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  /* Semantic colour mapping. Re-declared on .brand-scope so a subtree can
+     carry a different brand (see brands.html). */
+  :root,
+  .brand-scope {
+    --color-bg: light-dark(var(--brand-light-bg), var(--brand-dark-bg));
+    --color-surface: light-dark(var(--brand-light-surface), var(--brand-dark-surface));
+    --color-surface-sunken: light-dark(var(--brand-light-surface-sunken), var(--brand-dark-surface-sunken));
+    --color-text: light-dark(var(--brand-light-text), var(--brand-dark-text));
+    --color-text-muted: light-dark(var(--brand-light-text-muted), var(--brand-dark-text-muted));
+    --color-border: light-dark(var(--brand-light-border), var(--brand-dark-border));
+    --color-border-strong: light-dark(var(--brand-light-border-strong), var(--brand-dark-border-strong));
+    --color-accent: light-dark(var(--brand-light-accent), var(--brand-dark-accent));
+    --color-accent-hover: light-dark(var(--brand-light-accent-hover), var(--brand-dark-accent-hover));
+    --color-accent-soft: light-dark(var(--brand-light-accent-soft), var(--brand-dark-accent-soft));
+    --color-on-accent: light-dark(var(--brand-light-on-accent), var(--brand-dark-on-accent));
+    --color-highlight: light-dark(var(--brand-light-highlight), var(--brand-dark-highlight));
+    --color-focus: var(--color-accent);
+    --color-skeleton: color-mix(in srgb, var(--color-text) 9%, var(--color-surface));
+    --color-hover-wash: color-mix(in srgb, var(--color-text) 5%, transparent);
+    --color-active-wash: color-mix(in srgb, var(--color-text) 9%, transparent);
+  }
+
+  /* ---- Tier 3: theme pinning ---- */
+  :root[data-theme="light"] { color-scheme: light; }
+  :root[data-theme="dark"] { color-scheme: dark; }
+  .theme-light { color-scheme: light; }
+  .theme-dark { color-scheme: dark; }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --duration-fast: 0ms;
+      --duration: 0ms;
+      --duration-slow: 0ms;
+    }
+  }
+}

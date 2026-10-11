@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 36" width="184" height="36" role="img" aria-label="Hollis &amp; Reed">
+  <rect x="0" y="2" width="32" height="32" rx="9" fill="#7FCF9F"/>
+  <path d="M9 26V10h3v6.2h8V10h3v16h-3v-7H12v7z" fill="#141A16"/>
+  <circle cx="25" cy="9" r="2.4" fill="#F2C94C"/>
+  <text x="42" y="25" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="-0.3" fill="#ECEAE3">Hollis &amp; Reed</text>
+</svg>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact</title>
+  <meta name="description" content="Book a free 30-minute review of your books, or ask a question.">
+  <script src="config/brands.js"></script>
+  <script src="config/site.config.js"></script>
+  <script src="js/head.js"></script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-site-header></div>
+  <noscript><nav class="container" aria-label="Main"><p><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="pricing.html">Pricing</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p></nav></noscript>
+
+  <main id="main">
+    <header class="container page-header">
+      <h1>Book a free review, or just ask</h1>
+      <p class="lede">Thirty minutes with the bookkeeper who would look after you. We will tell you what to change even if you do not hire us.</p>
+    </header>
+
+    <section class="container section-tight" aria-labelledby="form-title">
+      <div class="split split-wide">
+        <div>
+          <h2 id="form-title" class="visually-hidden">Contact form</h2>
+          <form class="form card" id="contact-form" data-validate data-success="#contact-success" data-success-toast="Message sent (simulated)" novalidate>
+            <div class="alert alert-danger" data-form-summary hidden role="alert"></div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input class="input" id="name" name="name" type="text" required autocomplete="name" minlength="2">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" required autocomplete="email" aria-describedby="email-hint">
+                <p class="field-hint" id="email-hint">We reply from a named person, not a ticket system.</p>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="company">Business name <span class="field-optional">(optional)</span></label>
+                <input class="input" id="company" name="company" type="text" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="topic">What is this about?</label>
+                <div class="select-wrap">
+                  <select class="select" id="topic" name="topic" required>
+                    <option value="">Choose one</option>
+                    <option value="review">A free review of my books</option>
+                    <option value="switch">Switching from another bookkeeper</option>
+                    <option value="catch-up">Catching up on a backlog</option>
+                    <option value="other">Something else</option>
+                  </select>
+                  <span data-icon="chevron-down"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Tell us a little about the business</label>
+              <textarea class="textarea" id="message" name="message" required minlength="20" aria-describedby="message-hint" data-error-required="Tell us a little about the business." data-error-short="Give us a sentence or two (at least 20 characters) so the right person can reply."></textarea>
+              <p class="field-hint" id="message-hint">What you do, how the books are kept now, and what is bothering you about them.</p>
+            </div>
+
+            <div class="field">
+              <label class="checkbox" for="consent">
+                <input id="consent" name="consent" type="checkbox" required data-error-required="Tick the box so we are allowed to reply.">
+                <span>You can contact me about this enquiry. We never add you to a mailing list.</span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary btn-lg" type="submit">Send message</button>
+              <span class="form-note"><span data-icon="info"></span><span data-site="simulatedLabel">Simulated: nothing is sent. Connect a backend to make this live.</span></span>
+            </div>
+          </form>
+
+          <div class="card" id="contact-success" hidden>
+            <div class="alert alert-success">
+              <span data-icon="check-circle"></span>
+              <div>
+                <p class="alert-title">Message sent (simulated)</p>
+                <p>In the live version your bookkeeper would reply within one working day. <span data-site="simulatedLabel"></span></p>
+              </div>
+            </div>
+            <div class="cluster" style="margin-top: var(--space-4)">
+              <button class="btn btn-secondary" type="button" data-form-restore="#contact-form">Send another message</button>
+              <a class="btn btn-ghost" href="pricing.html">Look at pricing meanwhile</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="stack-lg" aria-labelledby="details-title">
+          <div>
+            <h2 id="details-title" style="font-size: var(--text-xl); margin-bottom: var(--space-4)">Other ways to reach us</h2>
+            <ul class="contact-list">
+              <li><span data-icon="mail"></span><a href="#" data-brand-href="email" data-brand="contact.email">hello@example.com</a></li>
+              <li><span data-icon="phone"></span><a href="#" data-brand-href="phone" data-brand="contact.phone">+44 20 0000 0000</a></li>
+              <li><span data-icon="map-pin"></span><address data-brand-address>Address</address></li>
+              <li><span data-icon="clock"></span><span data-brand="contact.hours">Hours</span></li>
+            </ul>
+          </div>
+          <div>
+            <h2 style="font-size: var(--text-xl); margin-bottom: var(--space-4)">What happens after you send this</h2>
+            <ol class="steps">
+              <li class="step"><div><h3>A reply within one working day</h3><p>From the bookkeeper who would look after you, with two or three times for a call.</p></div></li>
+              <li class="step"><div><h3>The 30-minute review</h3><p>Screen share or in person. We look at how the books are kept now.</p></div></li>
+              <li class="step"><div><h3>A written suggestion</h3><p>What to change and what it would cost, whether or not that involves us.</p></div></li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

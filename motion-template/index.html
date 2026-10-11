@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexora — Intelligence in Motion</title>
+    <meta name="description" content="Nexora builds advanced AI infrastructure for real-world impact — helping ambitious teams turn possibility into progress." />
+    <meta name="theme-color" content="#07080c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#eef1f6" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!--
+      Theme bootstrap: runs before first paint so there is no flash of the wrong theme.
+      The storage key must match `themeStorageKey` in src/config/site.ts.
+    -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var pref = "system";
+        try {
+          var stored = localStorage.getItem("theme-preference");
+          if (stored === "light" || stored === "dark") pref = stored;
+        } catch (e) {}
+        var theme = pref;
+        if (pref === "system") {
+          theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        root.setAttribute("data-theme", theme);
+        root.setAttribute("data-theme-preference", pref);
+        root.style.colorScheme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding:24px;font-family:system-ui;color:inherit">This site needs JavaScript enabled to display.</p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

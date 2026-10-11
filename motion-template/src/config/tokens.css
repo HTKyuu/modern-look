@@ -1,0 +1,109 @@
+/*
+ * ─────────────────────────────────────────────────────────────────────────────
+ *  BRAND & THEME TOKENS
+ *  Brand colours, typography and theme surfaces. Components only use these
+ *  semantic tokens, so a rebrand is an edit here (plus site.ts and /public).
+ *  Fonts are self-hosted via @fontsource — swap the imports in src/main.tsx.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+:root {
+  /* Typography */
+  --font-display: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --weight-display: 500;
+  --tracking-display: -0.04em;
+  --tracking-caps: 0.425em;
+
+  /* Layout */
+  --page-gutter: clamp(20px, 6vw, 92px);
+  --header-height: 86px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-base: 260ms;
+}
+
+/* ── Dark theme (matches the reference) ───────────────────────────────────── */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #07080c;
+  --color-bg-raised: #0a0c11;
+  --color-surface-overlay: rgba(9, 11, 16, 0.94);
+
+  --color-text: #f8f9fb;
+  --color-text-body: #d7dbe3;
+  --color-text-muted: #c4cbd8;
+  --color-text-subtle: #9a9fa8;
+  --color-accent: #b3c5f2;
+
+  --color-line: rgba(255, 255, 255, 0.1);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+  --color-control-border: rgba(255, 255, 255, 0.14);
+  --color-control-selected: rgba(255, 255, 255, 0.08);
+  --color-control-hover: rgba(255, 255, 255, 0.05);
+  --color-icon-ring: rgba(255, 255, 255, 0.32);
+
+  --color-button-bg: #f7f8fa;
+  --color-button-bg-hover: #ffffff;
+  --color-button-text: #0a0c11;
+
+  --color-focus: #b3c5f2;
+
+  /* Atmospheric lighting behind the hero */
+  --atmo-1: rgba(92, 118, 160, 0.16);
+  --atmo-2: rgba(40, 52, 78, 0.22);
+  --atmo-3: rgba(130, 110, 80, 0.06);
+
+  /* Canvas light trails & particles (read by HeroArtwork) */
+  --trail-color: 255, 214, 160;
+  --trail-cool: 214, 224, 245;
+  --glint-color: 255, 236, 205;
+  --particle-warm: 255, 196, 120;
+  --particle-cool: 220, 230, 255;
+  --particle-alpha: 1;
+}
+
+/* ── Light theme ───────────────────────────────────────────────────────────── */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg: #eef1f6;
+  --color-bg-raised: #f5f7fa;
+  --color-surface-overlay: rgba(244, 246, 250, 0.96);
+
+  --color-text: #0b0f19;
+  --color-text-body: #353d4c;
+  --color-text-muted: #4a5366;
+  --color-text-subtle: #5d6575;
+  --color-accent: #4b63c6;
+
+  --color-line: rgba(14, 22, 40, 0.12);
+  --color-line-strong: rgba(14, 22, 40, 0.18);
+  --color-control-border: rgba(14, 22, 40, 0.16);
+  --color-control-selected: rgba(14, 22, 40, 0.07);
+  --color-control-hover: rgba(14, 22, 40, 0.04);
+  --color-icon-ring: rgba(14, 22, 40, 0.35);
+
+  --color-button-bg: #0d111b;
+  --color-button-bg-hover: #1b2131;
+  --color-button-text: #ffffff;
+
+  --color-focus: #3f57bd;
+
+  --atmo-1: rgba(160, 182, 225, 0.38);
+  --atmo-2: rgba(200, 212, 236, 0.5);
+  --atmo-3: rgba(240, 214, 180, 0.22);
+
+  --trail-color: 196, 132, 58;
+  --trail-cool: 92, 112, 160;
+  --glint-color: 214, 150, 70;
+  --particle-warm: 206, 140, 60;
+  --particle-cool: 110, 128, 175;
+  --particle-alpha: 0.75;
+}

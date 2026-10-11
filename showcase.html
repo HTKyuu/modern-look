@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Components</title>
+  <meta name="description" content="Every component in the template, in both themes and every state.">
+  <script src="config/brands.js"></script>
+  <script src="config/site.config.js"></script>
+  <script src="js/head.js"></script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body data-showcase>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-site-header></div>
+  <noscript><nav class="container" aria-label="Main"><p><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="pricing.html">Pricing</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p></nav></noscript>
+
+  <main id="main">
+    <header class="container page-header" style="padding-bottom: var(--space-5)">
+      <h1>Component showcase</h1>
+      <p class="lede">Every reusable piece of the template, rendered with the active brand. Switch the theme in the header to check both; the last section shows them side by side. See <a href="brands.html">the brand preview</a> for a second identity.</p>
+    </header>
+
+    <nav class="showcase-nav" aria-label="Showcase sections">
+      <div class="container">
+        <ul>
+          <li><a href="#colour">Colour</a></li>
+          <li><a href="#type">Type</a></li>
+          <li><a href="#spacing">Spacing</a></li>
+          <li><a href="#buttons">Buttons</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#controls">Controls</a></li>
+          <li><a href="#tabs">Tabs</a></li>
+          <li><a href="#accordion">Accordion</a></li>
+          <li><a href="#dialog">Dialog</a></li>
+          <li><a href="#cards">Cards</a></li>
+          <li><a href="#feedback">Feedback</a></li>
+          <li><a href="#table">Table</a></li>
+          <li><a href="#states">States</a></li>
+          <li><a href="#themes">Both themes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <section class="showcase-section" id="colour" aria-labelledby="colour-title">
+        <h2 id="colour-title">Colour tokens</h2>
+        <p class="lede">Semantic names only. Components never reference a brand hex directly.</p>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-bg)"></div><div class="swatch-meta">Background<code>--color-bg</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-surface)"></div><div class="swatch-meta">Surface<code>--color-surface</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-surface-sunken)"></div><div class="swatch-meta">Sunken<code>--color-surface-sunken</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-text)"></div><div class="swatch-meta">Text<code>--color-text</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-text-muted)"></div><div class="swatch-meta">Muted text<code>--color-text-muted</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-border)"></div><div class="swatch-meta">Border<code>--color-border</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-border-strong)"></div><div class="swatch-meta">Strong border<code>--color-border-strong</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-accent)"></div><div class="swatch-meta">Accent<code>--color-accent</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-hover)"></div><div class="swatch-meta">Accent hover<code>--color-accent-hover</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-soft)"></div><div class="swatch-meta">Accent soft<code>--color-accent-soft</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-highlight)"></div><div class="swatch-meta">Highlight<code>--color-highlight</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-success)"></div><div class="swatch-meta">Success<code>--color-success</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-warning)"></div><div class="swatch-meta">Warning<code>--color-warning</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-danger)"></div><div class="swatch-meta">Danger<code>--color-danger</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: var(--color-info)"></div><div class="swatch-meta">Info<code>--color-info</code></div></div>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="type" aria-labelledby="type-title">
+        <h2 id="type-title">Typography</h2>
+        <p class="lede">Display face for headings, body face for everything else. Sizes are fluid at the top of the scale.</p>
+        <div class="type-specimen">
+          <div><h1>Display, level one</h1><small>h1, --text-3xl, display font</small></div>
+          <div><h2>Section heading, level two</h2><small>h2, --text-2xl</small></div>
+          <div><h3>Component heading, level three</h3><small>h3, --text-xl</small></div>
+          <div><h4>Small heading, level four</h4><small>h4, --text-lg</small></div>
+          <div><p class="lede">Lede paragraph. Introduces a section in one or two sentences and sits in muted text.</p><small>.lede, --text-lg</small></div>
+          <div><p>Body paragraph. The quick brown fox jumps over the lazy dog, and the ledger balances by the tenth of the month. Links look <a href="#type">like this</a>.</p><small>p, --text-base</small></div>
+          <div><p class="text-sm text-muted">Small supporting text for hints, captions and metadata.</p><small>.text-sm .text-muted</small></div>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="spacing" aria-labelledby="spacing-title">
+        <h2 id="spacing-title">Spacing and shape</h2>
+        <p class="lede">A nine-step spacing scale. Radii come from the brand: small for inputs, base for cards, large for plates and dialogs, and a separate value for buttons.</p>
+        <div class="split">
+          <div class="spacing-scale">
+            <div><code>--space-1</code><span style="width: var(--space-1)"></span></div>
+            <div><code>--space-2</code><span style="width: var(--space-2)"></span></div>
+            <div><code>--space-3</code><span style="width: var(--space-3)"></span></div>
+            <div><code>--space-4</code><span style="width: var(--space-4)"></span></div>
+            <div><code>--space-5</code><span style="width: var(--space-5)"></span></div>
+            <div><code>--space-6</code><span style="width: var(--space-6)"></span></div>
+            <div><code>--space-7</code><span style="width: var(--space-7)"></span></div>
+            <div><code>--space-8</code><span style="width: var(--space-8)"></span></div>
+            <div><code>--space-9</code><span style="width: var(--space-9)"></span></div>
+          </div>
+          <div class="demo-row">
+            <div class="card" style="border-radius: var(--radius-sm); padding: var(--space-3)">--radius-sm</div>
+            <div class="card" style="padding: var(--space-3)">--radius</div>
+            <div class="card" style="border-radius: var(--radius-lg); padding: var(--space-3)">--radius-lg</div>
+            <div class="card" style="border-radius: var(--radius-button); padding: var(--space-3)">--radius-button</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="buttons" aria-labelledby="buttons-title">
+        <h2 id="buttons-title">Buttons</h2>
+        <p class="lede">Four tones, three sizes. Hover, focus and active styles come from the tokens; loading and disabled are attributes.</p>
+        <div class="demo-group">
+          <span class="demo-label">Tones</span>
+          <div class="demo-row">
+            <button class="btn btn-primary" type="button">Primary</button>
+            <button class="btn btn-secondary" type="button">Secondary</button>
+            <button class="btn btn-ghost" type="button">Ghost</button>
+            <button class="btn btn-danger" type="button">Delete account</button>
+          </div>
+        </div>
+        <div class="demo-group">
+          <span class="demo-label">Sizes and icons</span>
+          <div class="demo-row">
+            <button class="btn btn-primary btn-sm" type="button">Small</button>
+            <button class="btn btn-primary" type="button">Default</button>
+            <button class="btn btn-primary btn-lg" type="button">Large</button>
+            <button class="btn btn-secondary" type="button"><span data-icon="calendar"></span>With icon</button>
+            <button class="btn btn-secondary btn-icon" type="button" aria-label="Search"><span data-icon="search"></span></button>
+          </div>
+        </div>
+        <div class="demo-group">
+          <span class="demo-label">States</span>
+          <div class="demo-row">
+            <button class="btn btn-primary" type="button" disabled>Disabled</button>
+            <button class="btn btn-secondary" type="button" disabled>Disabled</button>
+            <button class="btn btn-primary" type="button" data-loading="true" aria-disabled="true">Loading</button>
+            <button class="btn btn-secondary" type="button" data-demo="loading">Generate report (demo)</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="forms" aria-labelledby="forms-title">
+        <h2 id="forms-title">Form fields</h2>
+        <p class="lede">Labels above, hints below, errors below hints. Error text is linked with aria-describedby and the field is marked aria-invalid.</p>
+        <form class="form" onsubmit="return false">
+          <div class="form-row">
+            <div class="field">
+              <label for="demo-default">Default</label>
+              <input class="input" id="demo-default" type="text" placeholder="Placeholder text">
+              <p class="field-hint">A hint that explains the format.</p>
+            </div>
+            <div class="field">
+              <label for="demo-filled">Filled</label>
+              <input class="input" id="demo-filled" type="text" value="Nair Joinery">
+            </div>
+            <div class="field">
+              <label for="demo-error">With error</label>
+              <input class="input" id="demo-error" type="email" value="priya@" aria-invalid="true" aria-describedby="demo-error-error">
+              <div class="field-error" id="demo-error-error"><span data-icon="alert-circle"></span><span>Enter an email address like name@example.com.</span></div>
+            </div>
+            <div class="field">
+              <label for="demo-disabled">Disabled</label>
+              <input class="input" id="demo-disabled" type="text" value="Cannot edit" disabled>
+            </div>
+            <div class="field">
+              <label for="demo-select">Select</label>
+              <div class="select-wrap">
+                <select class="select" id="demo-select">
+                  <option>Monthly bookkeeping</option>
+                  <option>Payroll</option>
+                  <option>Year-end accounts</option>
+                </select>
+                <span data-icon="chevron-down"></span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="demo-textarea">Textarea</label>
+              <textarea class="textarea" id="demo-textarea" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="checkbox" for="demo-check"><input id="demo-check" type="checkbox" checked><span>Checkbox with a longer label that wraps onto a second line when the viewport is narrow.</span></label>
+          </div>
+        </form>
+      </section>
+
+      <section class="showcase-section" id="controls" aria-labelledby="controls-title">
+        <h2 id="controls-title">Switch and segmented control</h2>
+        <p class="lede">The switch is a button with role="switch". The segmented control is a fieldset of radio buttons, which is what the theme selector uses.</p>
+        <div class="demo-row">
+          <button class="switch" type="button" role="switch" aria-checked="true" onclick="this.setAttribute('aria-checked', this.getAttribute('aria-checked') !== 'true')">
+            <span class="switch-label-off">Off</span><span class="switch-track" aria-hidden="true"></span><span class="switch-label-on">Email reminders</span>
+          </button>
+          <fieldset class="segmented">
+            <legend>Billing view</legend>
+            <label class="segmented-option"><input type="radio" name="demo-seg" value="list" checked><span>List</span></label>
+            <label class="segmented-option"><input type="radio" name="demo-seg" value="grid"><span>Grid</span></label>
+            <label class="segmented-option"><input type="radio" name="demo-seg" value="map"><span>Map</span></label>
+          </fieldset>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="tabs" aria-labelledby="tabs-title">
+        <h2 id="tabs-title">Tabs</h2>
+        <p class="lede">Arrow keys move between tabs, Home and End jump to the ends. Panels are focusable so keyboard users land on the content.</p>
+        <div data-tabs>
+          <div class="tablist" role="tablist" aria-label="Report period">
+            <button class="tab" role="tab" id="d-tab-1" aria-controls="d-panel-1" aria-selected="true" type="button">This month</button>
+            <button class="tab" role="tab" id="d-tab-2" aria-controls="d-panel-2" aria-selected="false" type="button">Last quarter</button>
+            <button class="tab" role="tab" id="d-tab-3" aria-controls="d-panel-3" aria-selected="false" type="button">Year to date</button>
+          </div>
+          <div class="tabpanel" role="tabpanel" id="d-panel-1" aria-labelledby="d-tab-1" tabindex="0"><p>Cash in £42,180. Cash out £36,905. Three invoices overdue by more than 30 days.</p></div>
+          <div class="tabpanel" role="tabpanel" id="d-panel-2" aria-labelledby="d-tab-2" tabindex="0" hidden><p>Revenue up 8% on the previous quarter. Margin steady at 31%.</p></div>
+          <div class="tabpanel" role="tabpanel" id="d-panel-3" aria-labelledby="d-tab-3" tabindex="0" hidden><p>On track for the annual forecast. VAT set aside: £11,400.</p></div>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="accordion" aria-labelledby="accordion-title">
+        <h2 id="accordion-title">Accordion</h2>
+        <p class="lede">Native details and summary, so it works without JavaScript and is keyboard accessible by default.</p>
+        <div class="accordion" style="max-width: 46rem">
+          <details open>
+            <summary>Why native details?<span data-icon="chevron-down"></span></summary>
+            <div class="accordion-body"><p>It is focusable, toggles with Enter and Space, announces its state, and needs no script. We only style it.</p></div>
+          </details>
+          <details>
+            <summary>Can several be open at once?<span data-icon="chevron-down"></span></summary>
+            <div class="accordion-body"><p>Yes by default. Add a shared name attribute to the details elements if you want only one open at a time.</p></div>
+          </details>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="dialog" aria-labelledby="dialog-title">
+        <h2 id="dialog-title">Dialog</h2>
+        <p class="lede">Native dialog opened with showModal(): focus is trapped, Escape closes, focus returns to the opener. Clicking the backdrop also closes.</p>
+        <div class="demo-row">
+          <button class="btn btn-primary" type="button" data-dialog-open="demo-dialog">Open dialog</button>
+          <button class="btn btn-danger" type="button" data-dialog-open="demo-confirm">Delete report</button>
+        </div>
+        <dialog class="dialog" id="demo-dialog" aria-labelledby="demo-dialog-title">
+          <div class="dialog-header">
+            <h2 id="demo-dialog-title">Share this report</h2>
+            <button class="btn btn-ghost btn-icon btn-sm" type="button" data-dialog-close aria-label="Close"><span data-icon="close"></span></button>
+          </div>
+          <div class="dialog-body">
+            <p>Anyone with the link can view the report for 30 days. They cannot edit it.</p>
+            <div class="field">
+              <label for="demo-share-email">Send to</label>
+              <input class="input" id="demo-share-email" type="email" placeholder="name@example.com">
+            </div>
+          </div>
+          <div class="dialog-footer">
+            <button class="btn btn-ghost" type="button" data-dialog-close>Cancel</button>
+            <button class="btn btn-primary" type="button" data-dialog-close>Share report</button>
+          </div>
+        </dialog>
+        <dialog class="dialog" id="demo-confirm" aria-labelledby="demo-confirm-title">
+          <div class="dialog-header">
+            <h2 id="demo-confirm-title">Delete the March report?</h2>
+          </div>
+          <div class="dialog-body">
+            <p>This removes the report and its share links. The underlying bookkeeping data is not affected.</p>
+          </div>
+          <div class="dialog-footer">
+            <button class="btn btn-ghost" type="button" data-dialog-close>Keep report</button>
+            <button class="btn btn-danger" type="button" data-dialog-close>Delete report</button>
+          </div>
+        </dialog>
+      </section>
+
+      <section class="showcase-section" id="cards" aria-labelledby="cards-title">
+        <h2 id="cards-title">Cards, features and badges</h2>
+        <p class="lede">Flat cards by default. Raised cards only where elevation means something, such as a featured plan.</p>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Flat card</h3>
+            <p class="text-muted" style="margin-top: var(--space-2)">Border only. Sits on the background or on a sunken section.</p>
+          </div>
+          <div class="card card-raised">
+            <h3>Raised card</h3>
+            <p class="text-muted" style="margin-top: var(--space-2)">Adds the medium shadow. In dark mode the shadow is deeper and an edge highlight appears.</p>
+          </div>
+          <a class="card card-link" href="#cards">
+            <h3>Link card</h3>
+            <p class="text-muted" style="margin-top: var(--space-2)">The whole card is the link. Hover strengthens the border.</p>
+          </a>
+        </div>
+        <div class="demo-group" style="margin-top: var(--space-6)">
+          <span class="demo-label">Feature</span>
+          <div class="grid grid-3">
+            <div class="feature">
+              <div class="feature-icon"><span data-icon="shield"></span></div>
+              <h3>Feature block</h3>
+              <p>Icon tile, heading and muted body. Used in threes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="demo-group">
+          <span class="demo-label">Badges</span>
+          <div class="demo-row">
+            <span class="badge">Accent</span>
+            <span class="badge badge-neutral">Neutral</span>
+            <span class="badge badge-success">Paid</span>
+            <span class="badge badge-warning">Due soon</span>
+            <span class="badge badge-danger">Overdue</span>
+            <span class="badge badge-info">Draft</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="feedback" aria-labelledby="feedback-title">
+        <h2 id="feedback-title">Alerts and toasts</h2>
+        <p class="lede">Alerts stay in the page. Toasts confirm an action and go away on their own; hover pauses them.</p>
+        <div class="stack">
+          <div class="alert alert-info"><span data-icon="info"></span><div><p class="alert-title">Bank feed reconnects tomorrow</p><p>Your bank asks for re-authorisation every 90 days. Nothing to do yet.</p></div></div>
+          <div class="alert alert-success"><span data-icon="check-circle"></span><div><p class="alert-title">March is closed</p><p>Summary sent to two recipients.</p></div></div>
+          <div class="alert alert-warning"><span data-icon="alert-circle"></span><div><p class="alert-title">Three receipts still unmatched</p><p>Photograph them in the app before the 8th to keep the close on time.</p></div></div>
+          <div class="alert alert-danger"><span data-icon="x-circle"></span><div><p class="alert-title">Payroll submission failed</p><p>HMRC rejected the file because one employee has no National Insurance number. Add it and resubmit.</p></div></div>
+        </div>
+        <div class="demo-row" style="margin-top: var(--space-5)">
+          <button class="btn btn-secondary" type="button" data-demo="toast" data-tone="success">Success toast</button>
+          <button class="btn btn-secondary" type="button" data-demo="toast" data-tone="info">Info toast</button>
+          <button class="btn btn-secondary" type="button" data-demo="toast" data-tone="danger">Error toast</button>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="table" aria-labelledby="table-title">
+        <h2 id="table-title">Table</h2>
+        <p class="lede">Wrapped for horizontal scrolling on small screens. Numbers align right with tabular figures.</p>
+        <div class="table-wrap">
+          <table class="table">
+            <caption>Invoices issued in March</caption>
+            <thead><tr><th scope="col">Invoice</th><th scope="col">Client</th><th scope="col">Status</th><th scope="col" class="table-numeric">Amount</th></tr></thead>
+            <tbody>
+              <tr><td>INV-1042</td><td>Nair Joinery</td><td><span class="badge badge-success">Paid</span></td><td class="table-numeric">£2,400.00</td></tr>
+              <tr><td>INV-1043</td><td>Harbour Lane Bakery</td><td><span class="badge badge-warning">Due soon</span></td><td class="table-numeric">£860.00</td></tr>
+              <tr><td>INV-1044</td><td>Fenwick Dental</td><td><span class="badge badge-danger">Overdue</span></td><td class="table-numeric">£1,275.50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="states" aria-labelledby="states-title">
+        <h2 id="states-title">Loading, empty and error states</h2>
+        <p class="lede">Every list or panel that depends on data needs all three. Empty states point to the next action; errors say what happened and how to fix it.</p>
+        <div class="grid grid-3">
+          <div class="card" aria-busy="true" aria-label="Loading invoices">
+            <span class="skeleton" style="width: 40%; height: 1.25rem"></span>
+            <span class="skeleton" style="width: 90%; margin-top: var(--space-3)"></span>
+            <span class="skeleton" style="width: 75%; margin-top: var(--space-2)"></span>
+            <span class="skeleton" style="width: 60%; margin-top: var(--space-2)"></span>
+          </div>
+          <div class="empty-state">
+            <span data-icon="inbox"></span>
+            <h3>No invoices yet</h3>
+            <p>Invoices you issue will appear here with their payment status.</p>
+            <button class="btn btn-primary btn-sm" type="button">Create an invoice</button>
+          </div>
+          <div class="card">
+            <div class="alert alert-danger">
+              <span data-icon="x-circle"></span>
+              <div>
+                <p class="alert-title">Could not load invoices</p>
+                <p>The connection to your accounting software timed out.</p>
+              </div>
+            </div>
+            <button class="btn btn-secondary btn-sm" type="button" style="margin-top: var(--space-4)">Try again</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase-section" id="themes" aria-labelledby="themes-title">
+        <h2 id="themes-title">Both themes side by side</h2>
+        <p class="lede">Each panel pins its own colour scheme. Dark mode uses its own surfaces, borders and accent, not an inversion of light.</p>
+        <div class="theme-pair">
+          <div class="theme-panel theme-light">
+            <h3>Light</h3>
+            <div class="stack-sm">
+              <div class="demo-row">
+                <button class="btn btn-primary" type="button">Primary</button>
+                <button class="btn btn-secondary" type="button">Secondary</button>
+                <button class="btn btn-ghost" type="button">Ghost</button>
+              </div>
+              <div class="field">
+                <label for="light-input">Email</label>
+                <input class="input" id="light-input" type="email" placeholder="name@example.com">
+              </div>
+              <div class="card card-raised">
+                <h4>Raised card</h4>
+                <p class="text-muted">Muted text on a surface. <a href="#themes">A link.</a></p>
+              </div>
+              <div class="alert alert-warning"><span data-icon="alert-circle"></span><div><p class="alert-title">Warning alert</p></div></div>
+              <div class="demo-row"><span class="badge">Accent</span><span class="badge badge-success">Paid</span><span class="badge badge-danger">Overdue</span></div>
+            </div>
+          </div>
+          <div class="theme-panel theme-dark">
+            <h3>Dark</h3>
+            <div class="stack-sm">
+              <div class="demo-row">
+                <button class="btn btn-primary" type="button">Primary</button>
+                <button class="btn btn-secondary" type="button">Secondary</button>
+                <button class="btn btn-ghost" type="button">Ghost</button>
+              </div>
+              <div class="field">
+                <label for="dark-input">Email</label>
+                <input class="input" id="dark-input" type="email" placeholder="name@example.com">
+              </div>
+              <div class="card card-raised">
+                <h4>Raised card</h4>
+                <p class="text-muted">Muted text on a surface. <a href="#themes">A link.</a></p>
+              </div>
+              <div class="alert alert-warning"><span data-icon="alert-circle"></span><div><p class="alert-title">Warning alert</p></div></div>
+              <div class="demo-row"><span class="badge">Accent</span><span class="badge badge-success">Paid</span><span class="badge badge-danger">Overdue</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

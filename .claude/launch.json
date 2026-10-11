@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8765", "--bind", "127.0.0.1"],
+      "port": 8765
+    },
+    {
+      "name": "motion-template",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "motion-template", "run", "dev", "--", "--host", "127.0.0.1"],
+      "port": 5183
+    }
+  ]
+}

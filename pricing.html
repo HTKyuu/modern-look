@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing</title>
+  <meta name="description" content="Fixed monthly prices for bookkeeping, payroll and year-end accounts.">
+  <script src="config/brands.js"></script>
+  <script src="config/site.config.js"></script>
+  <script src="js/head.js"></script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-site-header></div>
+  <noscript><nav class="container" aria-label="Main"><p><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="pricing.html">Pricing</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p></nav></noscript>
+
+  <main id="main">
+    <header class="container page-header">
+      <h1>One fixed price a month. No hourly surprises.</h1>
+      <p class="lede">Prices depend on how many transactions and people you have, not on how many questions you ask. Every plan includes a named bookkeeper and the monthly close.</p>
+    </header>
+
+    <section class="container section-tight" aria-labelledby="plans-title">
+      <h2 id="plans-title" class="visually-hidden">Plans</h2>
+      <div class="cluster" style="margin-bottom: var(--space-6)">
+        <button class="switch" type="button" role="switch" aria-checked="false" data-billing-switch>
+          <span class="switch-label-off">Monthly</span>
+          <span class="switch-track" aria-hidden="true"></span>
+          <span class="switch-label-on">Annual</span>
+        </button>
+        <span class="badge badge-success" data-billing-annual-only hidden>Two months free</span>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card plan" aria-labelledby="plan-starter">
+          <div class="plan-header">
+            <h3 id="plan-starter">Starter</h3>
+          </div>
+          <div class="plan-price">
+            <span class="plan-amount">£<span data-price-monthly="149" data-price-annual="124">149</span></span>
+            <span class="plan-period">a month</span>
+          </div>
+          <p class="plan-desc">Sole traders and new companies with up to 100 transactions a month.</p>
+          <ul class="plan-features">
+            <li><span data-icon="check"></span><span>Monthly close by the 10th</span></li>
+            <li><span data-icon="check"></span><span>Receipt capture app</span></li>
+            <li><span data-icon="check"></span><span>Annual tax return</span></li>
+            <li><span data-icon="check"></span><span>Same-day replies</span></li>
+          </ul>
+          <a class="btn btn-secondary" href="contact.html">Start with Starter</a>
+        </article>
+
+        <article class="card plan plan-featured" aria-labelledby="plan-growth">
+          <div class="plan-header">
+            <h3 id="plan-growth">Growth</h3>
+            <span class="badge">Most chosen</span>
+          </div>
+          <div class="plan-price">
+            <span class="plan-amount">£<span data-price-monthly="289" data-price-annual="241">289</span></span>
+            <span class="plan-period">a month</span>
+          </div>
+          <p class="plan-desc">VAT-registered businesses with up to 15 people and 400 transactions a month.</p>
+          <ul class="plan-features">
+            <li><span data-icon="check"></span><span>Everything in Starter</span></li>
+            <li><span data-icon="check"></span><span>Payroll and pensions for up to 15 people</span></li>
+            <li><span data-icon="check"></span><span>Quarterly VAT returns</span></li>
+            <li><span data-icon="check"></span><span>Quarterly numbers call</span></li>
+            <li><span data-icon="check"></span><span>Year-end accounts and corporation tax</span></li>
+          </ul>
+          <a class="btn btn-primary" href="contact.html">Start with Growth</a>
+        </article>
+
+        <article class="card plan" aria-labelledby="plan-established">
+          <div class="plan-header">
+            <h3 id="plan-established">Established</h3>
+          </div>
+          <div class="plan-price">
+            <span class="plan-amount">£<span data-price-monthly="520" data-price-annual="433">520</span></span>
+            <span class="plan-period">a month</span>
+          </div>
+          <p class="plan-desc">Larger teams, more than one entity, or a finance lead who needs clean data every month.</p>
+          <ul class="plan-features">
+            <li><span data-icon="check"></span><span>Everything in Growth</span></li>
+            <li><span data-icon="check"></span><span>Up to 3 entities, intercompany handled</span></li>
+            <li><span data-icon="check"></span><span>Monthly management pack with budget comparison</span></li>
+            <li><span data-icon="check"></span><span>Monthly numbers call</span></li>
+          </ul>
+          <a class="btn btn-secondary" href="contact.html">Start with Established</a>
+        </article>
+      </div>
+
+      <div class="alert alert-info" style="margin-top: var(--space-6)">
+        <span data-icon="info"></span>
+        <div>
+          <p class="alert-title">More than 400 transactions, or more than three entities?</p>
+          <p>We quote those individually. <button class="btn btn-ghost btn-sm" type="button" data-dialog-open="custom-plan-dialog" style="margin-left: var(--space-1)">Ask about a custom plan</button></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="compare-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="compare-title">What is in each plan</h2>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <caption>Limits are per month. Catch-up bookkeeping is priced separately per month of backlog.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Starter</th>
+                <th scope="col">Growth</th>
+                <th scope="col">Established</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Transactions a month</th><td>100</td><td>400</td><td>Unlimited</td></tr>
+              <tr><th scope="row">People on payroll</th><td>None</td><td>15</td><td>50</td></tr>
+              <tr><th scope="row">Entities</th><td>1</td><td>1</td><td>3</td></tr>
+              <tr><th scope="row">Monthly close by the 10th</th><td><span data-icon="check"></span><span class="visually-hidden">Included</span></td><td><span data-icon="check"></span><span class="visually-hidden">Included</span></td><td><span data-icon="check"></span><span class="visually-hidden">Included</span></td></tr>
+              <tr><th scope="row">VAT returns</th><td>Not included</td><td><span data-icon="check"></span><span class="visually-hidden">Included</span></td><td><span data-icon="check"></span><span class="visually-hidden">Included</span></td></tr>
+              <tr><th scope="row">Numbers call</th><td>Not included</td><td>Quarterly</td><td>Monthly</td></tr>
+              <tr><th scope="row">Management pack</th><td>Not included</td><td>Not included</td><td><span data-icon="check"></span><span class="visually-hidden">Included</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sunken" aria-labelledby="faq-title">
+      <div class="container container-narrow">
+        <div class="section-header">
+          <h2 id="faq-title">Billing questions</h2>
+        </div>
+        <div class="accordion">
+          <details>
+            <summary>Is there a contract?<span data-icon="chevron-down"></span></summary>
+            <div class="accordion-body"><p>Monthly plans run month to month with 30 days' notice. Annual plans are paid up front and include two months free; if you leave early we refund the unused months minus the discount.</p></div>
+          </details>
+          <details>
+            <summary>What happens if I go over the transaction limit?<span data-icon="chevron-down"></span></summary>
+            <div class="accordion-body"><p>Nothing in the month it happens. If it happens two months running we suggest the next plan up and move you at the start of the following month.</p></div>
+          </details>
+          <details>
+            <summary>Is the software included?<span data-icon="chevron-down"></span></summary>
+            <div class="accordion-body"><p>No. Your accounting software subscription stays in your name so you own your data. We will tell you which tier you need; it is usually the cheapest one.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="dialog" id="custom-plan-dialog" aria-labelledby="custom-plan-title">
+    <form class="form" data-validate data-success-toast="Request sent (simulated)" novalidate>
+      <div class="dialog-header">
+        <div>
+          <h2 id="custom-plan-title">Ask about a custom plan</h2>
+          <p class="text-muted text-sm">Tell us roughly what you have and we will reply within one working day.</p>
+        </div>
+        <button class="btn btn-ghost btn-icon btn-sm" type="button" data-dialog-close aria-label="Close"><span data-icon="close"></span></button>
+      </div>
+      <div class="dialog-body">
+        <div class="alert alert-danger" data-form-summary hidden role="alert"></div>
+        <div class="field">
+          <label for="cp-email">Work email</label>
+          <input class="input" id="cp-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="cp-size">Roughly how big is the business?</label>
+          <div class="select-wrap">
+            <select class="select" id="cp-size" name="size" required data-error-required="Choose a business size.">
+              <option value="">Choose one</option>
+              <option>Up to 15 people</option>
+              <option>15 to 50 people</option>
+              <option>More than 50 people</option>
+              <option>Several entities</option>
+            </select>
+            <span data-icon="chevron-down"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cp-notes">What should we know? <span class="field-optional">(optional)</span></label>
+          <textarea class="textarea" id="cp-notes" name="notes" rows="3"></textarea>
+        </div>
+        <p class="form-note"><span data-icon="info"></span><span data-site="simulatedLabel">Simulated: nothing is sent. Connect a backend to make this live.</span></p>
+      </div>
+      <div class="dialog-footer">
+        <button class="btn btn-ghost" type="button" data-dialog-close>Cancel</button>
+        <button class="btn btn-primary" type="submit">Send request</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div data-site-footer></div>
+</body>
+</html>

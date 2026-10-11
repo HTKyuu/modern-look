@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 36" width="236" height="36" role="img" aria-label="Kestrel Freight">
+  <rect x="0" y="2" width="32" height="32" rx="4" fill="#121A22"/>
+  <path d="M6 26 16 9l10 17h-4.6L16 16.8 10.6 26z" fill="#FF8A4C"/>
+  <path d="M12.5 26l3.5-5.5 3.5 5.5z" fill="#F3F5F7"/>
+  <text x="42" y="25" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800" letter-spacing="0.4" fill="#121A22">KESTREL FREIGHT</text>
+</svg>

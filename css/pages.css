@@ -1,0 +1,131 @@
+/*
+ * Page-level layouts: hero, showcase, brand preview.
+ * Anything reused across pages belongs in components.css instead.
+ */
+@layer pages {
+
+  /* ---- Hero ---- */
+  .hero {
+    display: grid;
+    gap: var(--space-7);
+    align-items: center;
+    padding-block: var(--section-padding);
+  }
+  .hero h1 { max-width: 16ch; }
+  .hero .lede { margin-top: var(--space-5); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+  @media (min-width: 56rem) {
+    .hero { grid-template-columns: 7fr 5fr; gap: var(--space-8); }
+  }
+
+  /* The hero plate: the company's own mark on a surface that borrows a
+     texture from its trade (ruled ledger lines, a dispatch grid). */
+  .hero-plate {
+    position: relative;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: var(--space-4);
+    aspect-ratio: 5 / 4;
+    padding: var(--space-6);
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  .hero-plate::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .hero-plate[data-plate="ruled"]::before {
+    background-image:
+      linear-gradient(to right, transparent 0 calc(14% - 1px), var(--color-accent-soft) calc(14% - 1px) calc(14% + 1px), transparent calc(14% + 1px)),
+      repeating-linear-gradient(to bottom, transparent 0 31px, var(--color-border) 31px 32px);
+  }
+  .hero-plate[data-plate="grid"]::before {
+    background-image:
+      linear-gradient(var(--color-border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: center;
+  }
+  .hero-plate[data-plate="plain"]::before { display: none; }
+  .hero-plate > * { position: relative; }
+  .hero-plate-mark { width: clamp(5rem, 24%, 7.5rem); }
+  .hero-plate-mark img { width: 100%; }
+  .hero-plate-wordmark img { height: 2.25rem; width: auto; }
+  .hero-plate-tagline { max-width: 26ch; text-align: center; color: var(--color-text-muted); }
+
+  /* ---- Showcase ---- */
+  .showcase-nav { position: sticky; top: var(--header-height); z-index: 5; padding-block: var(--space-3); background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border); }
+  .showcase-nav ul { display: flex; flex-wrap: wrap; gap: var(--space-1); list-style: none; padding: 0; }
+  .showcase-nav a { display: inline-block; padding: 0.375rem 0.75rem; border-radius: var(--radius-sm); color: var(--color-text-muted); font-size: var(--text-sm); font-weight: 500; text-decoration: none; }
+  .showcase-nav a:hover { color: var(--color-text); background: var(--color-hover-wash); }
+  .showcase-section { padding-block: var(--space-7); border-bottom: 1px solid var(--color-border); }
+  .showcase-section:last-child { border-bottom: 0; }
+  .showcase-section > h2 { margin-bottom: var(--space-2); }
+  .showcase-section > .lede { margin-bottom: var(--space-5); }
+  .demo-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+  .demo-group { display: grid; gap: var(--space-3); }
+  .demo-group + .demo-group { margin-top: var(--space-5); }
+  .demo-label { font-size: var(--text-sm); font-weight: 600; color: var(--color-text-muted); }
+
+  .theme-pair { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+  .theme-panel {
+    padding: var(--space-5);
+    background: var(--color-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+  .theme-panel > h3 { margin-bottom: var(--space-4); font-size: var(--text-base); color: var(--color-text-muted); }
+  .theme-panel .stack-sm > * + * { margin-top: var(--space-3); }
+
+  .swatches { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr)); }
+  .swatch { border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; background: var(--color-surface); }
+  .swatch-color { height: 3.25rem; border-bottom: 1px solid var(--color-border); }
+  .swatch-meta { padding: 0.5rem 0.625rem; font-size: var(--text-xs); }
+  .swatch-meta code { display: block; margin-top: 0.125rem; background: none; padding: 0; color: var(--color-text-muted); }
+
+  .type-specimen { display: grid; gap: var(--space-4); }
+  .type-specimen > div { display: grid; gap: var(--space-1); padding-bottom: var(--space-4); border-bottom: 1px solid var(--color-border); }
+  .type-specimen small { color: var(--color-text-muted); }
+
+  .spacing-scale { display: grid; gap: var(--space-2); }
+  .spacing-scale div { display: grid; grid-template-columns: 6rem 1fr; align-items: center; gap: var(--space-3); font-size: var(--text-sm); }
+  .spacing-scale span { height: 1rem; background: var(--color-accent); border-radius: 2px; }
+
+  /* ---- Brand preview ---- */
+  .brand-preview-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    align-items: center;
+    justify-content: space-between;
+    margin-block: var(--space-5);
+  }
+  .brand-scope {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .brand-scope .hero { padding-block: var(--space-8); }
+  .brand-scope .section { padding-block: var(--space-8); }
+  .brand-diff { margin-top: var(--space-7); }
+  .brand-diff th:first-child { width: 11rem; }
+  .swatch-inline {
+    display: inline-block;
+    width: 1em; height: 1em;
+    margin-right: 0.35em;
+    vertical-align: -0.15em;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 3px;
+  }
+}
